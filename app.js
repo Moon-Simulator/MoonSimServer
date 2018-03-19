@@ -21,8 +21,8 @@ app.get('/crop/:width/:height', (request, response) => {
         console.log(err); 
       } else {
         response.sendFile('/home/ubuntu/moonsimserver/output/tmp.png');
+        fs.unlinkSync('/home/ubuntu/moonsimserver/output/tmp.png'); // Delete the temporary file that we created in the cropping task
       }
-      fs.unlinkSync('/home/ubuntu/moonsimserver/output/tmp.png'); // Delete the temporary file that we created in the cropping task
     })
 });
 
