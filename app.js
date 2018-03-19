@@ -20,7 +20,7 @@ app.get('/crop/:width/:height', (request, response) => {
       if (err) {
         console.log(err); 
       } else {
-        response.sendFile('output/tmp.png', { root: 'home/ubuntu/moonsimserver/' });
+        response.sendFile('home/ubuntu/moonsimserver/output/tmp.png');
       }
     })
 
