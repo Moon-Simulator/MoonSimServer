@@ -4,6 +4,8 @@ var app = express();
 const gm = require('gm');
 const fs = require('fs');
 
+const path = require('path');
+
 app.get('/', function (req, res) {
   res.send('Hello World!');
 });
@@ -18,7 +20,7 @@ app.get('/crop/:width/:height', (request, response) => {
       if (err) {
         console.log(err); 
       } else {
-        response.sendFile('./output/tmp.png');
+        response.sendFile(path.resolve(app.get('appPath') + '/output/tmp.png'));
       }
     })
 
