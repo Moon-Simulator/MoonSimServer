@@ -1,7 +1,9 @@
 var express = require('express');
 var app = express();
 
-var gm = require('gm');
+const gm = require('gm');
+const width = 300;
+const height = 400;
 
 app.get('/', function (req, res) {
   res.send('Hello World!');
