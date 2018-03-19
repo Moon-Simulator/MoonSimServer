@@ -24,7 +24,7 @@ app.get('/crop/:width/:height', (request, response) => {
       }
     })
 
-   fs.unlinkSync('./output/tmp.png'); // Delete the temporary file that we created in the cropping task
+   fs.unlinkSync(path.resolve(app.get('appPath') + '/output/tmp.png')); // Delete the temporary file that we created in the cropping task
 });
 
 app.listen(3000, function () {
